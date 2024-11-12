@@ -18,7 +18,30 @@ wikiは最新のdumpを専用ダウンロードサイトに保存しているの
    
    2) venvの作成
       
-      適当なディレクトリに移動して、pythonのバージョン指定でvenvを作る。ディレクトリはどこでもいいが、1.で作成したデータのフォルダー上から作るとまとまっていてわかりやすい。手順は、[こちら](https://qiita.com/unaginokabayaki/items/81d7b2bf8a6bdaee37a9)の3.　venvで仮想環境を作る　に従う。acitivateするとvenv起動状態になり、プロンプトがvenv内をさすようになる。
+      適当なディレクトリに移動して、pythonのバージョン指定(ここでは-3.10 末尾のマイナーバージョン番号は不要）でvenvを作る。ディレクトリはどこでもいいが、1.で作成したデータのフォルダー直下にvenv用のフォルダを作る（名前はな何でもよい）とまとまっていてわかりやすい。手順は、以下のとおり。（[こちら](https://qiita.com/unaginokabayaki/items/81d7b2bf8a6bdaee37a9)の3.に記述されている）
+      
+      1. コマンドラインからvenv用フォルダにディレクトリを移動して、以下を入力
+         
+         py -3.10 -m venv .venv
+      
+      2. venvを起動する。上記と同じコマンドラインから以下を入力
+      
+      　　.venv\Scripts\activate
+      
+      　　acitivateするとvenv起動状態になり、プロンプトが以下のようにvenv内をさすようになる。(.venv)が仮想環境状態になったことを意味する。
+      
+      　　　　(.venv) C:\Users\uehara\wiki_data\wiki_venv> 
+      
+      確認のため、以下のように入力すると、確かにpythonのバージョンが3.10に下がっていることがわかる(Vは大文字)
+      
+      　　　　(.venv) C:\Users\uhoku\wiki_data\wiki_parser>python -V
+      　　　　Python 3.10.5
+      
+      venvを停止したい場合は
+      
+      (.venv) C:\Users\uhoku\wiki_data\wiki_parser>deactivate
+      
+      
    
    3) wikiextractor（エラー対応版）インストール
       
