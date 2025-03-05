@@ -40,25 +40,21 @@ wikiは最新のdumpを専用ダウンロードサイトに保存しているの
       venvを停止したい場合は
       
       (.venv) C:\Users\uhoku\wiki_data\wiki_parser>deactivate
-      
-      
+3) wikiextractor（エラー対応版）インストール
    
-   3) wikiextractor（エラー対応版）インストール
-      
-      上記のvenv activate状態で、wikiextractorをインストール。ただし、pipでインストールすると、実行途中でエラーになるので、以下の手順でgithubからインストールする。
-      
-      https://zenn.dev/haru330/articles/503c217c3cda1e
+   上記のvenv activate状態で、wikiextractorをインストール。ただし、pipでインストールすると、実行途中でエラーになるので、以下の手順でgithubからインストールする。
    
-   4) wikiextractor でテキストファイルに変換
-      
-      venvプロンプト上で以下のとおり実行。カレントディレクトリは、jawiki-latest-pages-articles.xml.bz2の上に移す。1時間くらいかかる。詳細は上記3.のリンク
-      
-      wikiextractor jawiki-latest-pages-articles.xml.bz2.xml
-   
-   5) テキストファイルをmongodbに保尊
-      
-      上記のデータをjsonに変換し、mongodbに保存する。プログラムはwiki_scraping.py
+   https://zenn.dev/haru330/articles/503c217c3cda1e
 
+4) wikiextractor でテキストファイルに変換
+   
+   venvプロンプト上で以下のとおり実行。カレントディレクトリは、jawiki-latest-pages-articles.xml.bz2の上に移す。1時間くらいかかる。詳細は上記3.のリンク
+   
+   wikiextractor jawiki-latest-pages-articles.xml.bz2.xml
+
+5) テキストファイルをmongodbに保尊
+   
+   上記のデータをjsonに変換し、mongodbに保存する。プログラムはwiki_scraping.py
 3. wiki記事のカテゴリーラベル取得
    
    wiki dumpのなかで、sql形式のカテゴリーラベルデータ、とwebサービスでidとカテゴリーを対応付けるものの2通りがある。sqlのほうは中身を見たところカテゴリーではなかったので、以下2.を使うしかない
@@ -88,6 +84,10 @@ wikiは最新のdumpを専用ダウンロードサイトに保存しているの
    [AIにおける留意点　バイアスと限界 #Python - Qiita](https://qiita.com/ka201504/items/729bc1f90c204957312f#3-%E6%A4%9C%E8%A8%BC%EF%BC%91)
    
    https://www.anlp.jp/proceedings/annual_meeting/2023/pdf_dir/A7-3.pdf
+   
+   [大規模言語モデル（LLM）における日本語評価の概観 - Algomatic Tech Blog](https://tech.algomatic.jp/entry/2024/02/29/153905)
+   
+   
 
 5. 東北大学日本語BERT
    
@@ -111,6 +111,6 @@ https://jupyterbook.hnishi.com/language-models/fine_tune_jp_bert_part01.html
    
    日本語wikiの分析から、バイアスの原因を探し出す。例えば、単語と単語の共起確率(PMI)
 
-7. 固有表現抽出の学習（参考）
+8. 固有表現抽出の学習（参考）
 
 　　[BERTによる日本語固有表現抽出 #bert - Qiita](https://qiita.com/age884/items/7b8d5c583e59e755aaf0)
